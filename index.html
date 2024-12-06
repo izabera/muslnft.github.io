@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>musl nft</title>
+</head>
+<body>
+    <!-- stolen from http://musl.libc.org/musl4.svg -->
+    <div id="svg-container">
+        <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+        <svg
+           xmlns:dc="http://purl.org/dc/elements/1.1/"
+           xmlns:cc="http://creativecommons.org/ns#"
+           xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+           xmlns:svg="http://www.w3.org/2000/svg"
+           xmlns="http://www.w3.org/2000/svg"
+           xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+           xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+           width="46"
+           height="90"
+           id="svg2">
+          <g
+             inkscape:label="Layer 1"
+             inkscape:groupmode="layer"
+             id="layer1">
+            <!-- had to reorder these -->
+            <path my_tag="7"
+               style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+               d="m 20.199091,81.215471 c 0,0 -4.851272,10.240499 -10.4704275,0.05912 C 4.1095125,71.093198 2.4505925,48.224368 2.4505925,48.224368 -5.9652235,-37.514075 52.825581,27.888026 44.695001,39.216935 Z"
+               id="path3169"/>
+            <path my_tag="6"
+               style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+               d="m 19.832786,81.675377 c 0,0 -4.359344,9.162845 -9.261229,0.122759 C 5.6696765,72.75805 4.3554055,52.379402 4.3554055,52.379402 -2.5145475,-24.008304 49.046893,33.910578 41.7798,44.065781 Z"
+               id="path3167"/>
+            <path my_tag="5"
+               style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+               d="m 19.435818,82.175046 c 0,0 -3.82502,7.99615 -7.962233,0.185081 C 7.3363755,74.549061 6.3792145,56.858467 6.3792145,56.858467 1.1206745,-9.436822 44.953619,40.437129 38.620617,49.319909 Z"
+               id="path3165"/>
+            <path my_tag="4"
+               style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+               d="m 19.008601,82.717179 c 0,0 -3.250484,6.795047 -6.766102,0.157359 C 8.7268835,76.236853 7.9136905,61.203662 7.9136905,61.203662 3.4457855,4.8669725 40.693392,47.248666 35.31168,54.797184 Z"
+               id="path3163"/>
+            <path my_tag="3"
+               style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+               d="m 18.708535,83.064772 c 0,0 -2.874029,5.931783 -5.695842,0.274486 C 10.190881,77.681961 9.8147915,64.722665 9.8147915,64.722665 7.2102885,16.186985 37.679774,52.00558 32.997209,58.631404 Z"
+               id="path3161"/>
+            <path my_tag="2"
+               style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+               d="m 18.407261,83.432665 c 0,0 -2.480252,5.076507 -4.755577,0.312365 C 11.37636,78.98089 11.243051,67.982798 11.243051,67.982798 9.7460505,26.808955 34.666478,56.797136 30.667792,62.488113 Z"
+               id="path3159"/>
+            <path my_tag="1"
+               style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+               d="m 18.178817,83.709704 c 0,0 -2.182887,4.427099 -4.032247,0.347241 C 12.297211,79.977085 12.363126,70.475434 12.363126,70.475434 11.76482,34.92008 32.38066,60.428714 28.901927,65.411487 Z"
+               id="path3157"/>
+            <path my_tag="0"
+               style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+               d="m 18.013212,83.901635 c 0,0 -1.973758,3.95166 -3.45317,0.405001 -1.479413,-3.546662 -1.189191,-11.914188 -1.189191,-11.914188 0.364186,-31.290639 17.347682,-9.338611 14.253243,-4.865796 z"
+               id="path2383"/>
+          </g>
+        </svg>
+    </div>
+
+    <p id="nft"></p>
+    <script>
+        const hash = window.location.hash;
+        let href = window.location.href;
+        let seed = parseInt(hash.substr(1));
+
+        function rand() {
+            seed = ((seed * 16807) % 0xFFFFFFFF);
+            if (seed == 0)
+                seed = 1;
+            return seed;
+        }
+        if (isNaN(seed) || seed <= 0) {
+            seed = Math.round(Math.random() * 0xFFFFFFFF);
+            href = href.replace(/#.*/, '') + '#' + seed;
+            window.location.href = href;
+        }
+        document.getElementById("nft").innerHTML = `Your musl nft: ${seed}`;
+
+        const taggedElements = document.querySelectorAll('[my_tag]');
+        taggedElements.forEach(element => {
+            element.style.fill = '#' + (rand() & 0xFFFFFF).toString(16);
+        });
+    </script>
+</body>
+</html>
