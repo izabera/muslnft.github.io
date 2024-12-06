@@ -80,7 +80,7 @@
 
         const taggedElements = document.querySelectorAll('[my_tag]');
         taggedElements.forEach(element => {
-            element.style.fill = '#' + (rand() & 0xFFFFFF).toString(16);
+            element.style.fill = '#' + (rand() & 0xFFFFFF).toString(16).padStart(6,'0');
         });
     </script>
 </body>
